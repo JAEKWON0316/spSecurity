@@ -1,29 +1,40 @@
 package com.jack.config;
 
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 
 @EnableWebSecurity(debug = true)
 public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 	
+	//@Autowired
+	//private PasswordEncoder bcryptPasswordEncoder;
+	
 	@Autowired
-	private PasswordEncoder bcryptPasswordEncoder;
+	private DataSource dataSource;
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception { //auth는 회원가입 할 떄 들어가는 build login 매핑을 아예 해준다.
 		
-		
+		/*
 		auth
 			.inMemoryAuthentication()
 			.withUser("jack")
 			.password("$2a$10$AzFLiN.DolLwlrY8kMdg/udR88P6I4Q8BhDr4fxfIq4DeGnlQSX8S")
 			.roles("ADMIN");
+		*/
 		
-			System.out.println("my password id crypt " + bcryptPasswordEncoder.encode("1234"));
+		auth
+			.jdbcAuthentication()  //기본적인 db쿼리문을 가지고 있다. (select, ... 등등)
+			.dataSource(dataSource)
+			.passwordEncoder(NoOpPasswordEncoder.getInstance());
+		
+			//System.out.println("my password id crypt " + bcryptPasswordEncoder.encode("1234"));
 	}
 	
 	@Override
@@ -39,8 +50,17 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers("/member/**").authenticated() //member 폴더는 인증 , /**는 하위 모든 폴더를 얘기한다.
 			.anyRequest().permitAll()   //member는 인증을 받고 그 외의 것은 모두 공개(인증X)한다.
 			.and()
-			.formLogin()
+			.formLogin().loginPage("/clogin").loginProcessingUrl("/member/gallery") //커스터마이징한 로그인페이지를 쓸 수 있게 함.
 			.and()
-			.logout();
+			.httpBasic()
+			.and()
+			.logout(); 
+		     /*
+			.logoutUrl("/member/bye")   //로그아웃을 수행할 URL을 지정할 떄 사용
+			.logoutSuccessUrl("/bye?logout")  //로그아웃 성공하면 리다이렉션 되는 URL
+			.deleteCookies("JSESSIONID") //삭제할 쿠키이름
+			.invalidateHttpSession(true); //기존 세션 무효화
+			*/
+		
 	}
 }

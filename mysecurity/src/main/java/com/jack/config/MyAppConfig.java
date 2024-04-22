@@ -1,8 +1,12 @@
 package com.jack.config;
 
+
+import javax.sql.DataSource;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -24,7 +28,19 @@ public class MyAppConfig {
 		
 	}
 	
-
+	//db연결 DataSource
+	@Bean
+	DataSource datasource() {
+		DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
+		
+		driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/mydb?useUnicode=true&characterEncoding=utf-8"); //여기선 amp를 안써줘도 된다.
+		driverManagerDataSource.setUsername("root");
+		driverManagerDataSource.setPassword("diwo0206^");
+		driverManagerDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+		
+		return driverManagerDataSource;
+	}
+	
 	@Bean
 	PasswordEncoder getPasswordEncoder() {
 		
