@@ -15,20 +15,26 @@ public class DefaultController {
 		return "default";
 	}
 	
-	@ResponseBody //body에다가 직접 리턴값으로 쓸 수 있게 해줌. 
-	@GetMapping("/hello")
-	public String hello() {
-		System.out.println("hello()가 실행됨");
-		return "Hello~! Welcome to Java Wrold!! Have a Good Luck";
+	@GetMapping("/about")
+	public String about() {
+		return "about";
 	}
 	
-	/*
-	@PMapping("/bye")  //값은 bye produces(글씨 쓰기전에 헤더에 선언) UTF-8로
-	public String bye() {
-		System.out.println("bye()가 실행됨");
-		return "redirect:/clogin";
+	@GetMapping("/gallery")
+	public String gallery() {
+		return "gallery";
 	}
-	*/
+	
+	@GetMapping("/youtube")
+	public String youtube() {
+		return "youtube";
+	}
+	
+	@GetMapping("/contact")
+	public String contact() {
+		return "contact";
+	}
+	
 	@GetMapping("/clogin")
 	public String customLogin() {
 				

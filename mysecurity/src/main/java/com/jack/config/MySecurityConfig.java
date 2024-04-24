@@ -8,12 +8,13 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @EnableWebSecurity(debug = true)
 public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 	
-	//@Autowired
-	//private PasswordEncoder bcryptPasswordEncoder;
+	@Autowired
+	private PasswordEncoder bcryptPasswordEncoder;
 	
 	@Autowired
 	private DataSource dataSource;
@@ -32,9 +33,9 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 		auth
 			.jdbcAuthentication()  //기본적인 db쿼리문을 가지고 있다. (select, ... 등등)
 			.dataSource(dataSource)
-			.passwordEncoder(NoOpPasswordEncoder.getInstance());
+			.passwordEncoder(bcryptPasswordEncoder); //사이트에서 암호화한 비밀번호값을 넣어준것.(DB에서 받아서 encoding 작업을 해준다)
 		
-			//System.out.println("my password id crypt " + bcryptPasswordEncoder.encode("1234"));
+			System.out.println("my password id crypt " + bcryptPasswordEncoder.encode("admin123"));
 	}
 	
 	@Override
