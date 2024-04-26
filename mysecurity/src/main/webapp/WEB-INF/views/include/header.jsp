@@ -19,7 +19,7 @@
 <body>
     <header>
         <div class="logo">
-            <a href="index"><img src="res/images/logo3.png" alt="logo"></a>
+            <a href="./"><img src="res/images/logo3.png" alt="logo"></a>
         </div>
         <div class="signin text-center">
            <h3 class="mb-3">LOGIN</h3> 

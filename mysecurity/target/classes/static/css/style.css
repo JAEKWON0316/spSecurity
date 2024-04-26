@@ -2,8 +2,8 @@ body{
     margin:0;
     font-family: "Hahmlet", serif;
     color:#121212;
-} 
-a,a:link{ /*a링크 밑줄 없애는 법*/
+}
+a,a:link{
     text-decoration: none;
     color:#333;
 }
@@ -13,7 +13,7 @@ a:hover{
 header{
     border-right:1px solid #ededed;
     padding:50px 30px;
-    height: 100vh; /*반응형 웹할 때 쓰는 사이즈 100vh=100% */
+    height: 100vh;
     width:300px;
     position: fixed;
     top:0;
@@ -24,7 +24,7 @@ header{
     margin-top:50px;
 }
 .logo img{
-    width:250px;
+    width:200px;
 }
 .signin{
     border:1px solid #ddd;
@@ -56,7 +56,7 @@ header{
     height:40px;
     line-height:36px;
     border-radius:50%;
-    text-decoration: none;
+    text-decoration:none;
 }
 a.instagram{
    background: radial-gradient(circle at 30% 107%, 
@@ -99,9 +99,9 @@ aside{
     height:100vh;
     background:#ededed;
     padding:50px 30px;
-    position: fixed;
-    top: 0;
-    left: 1200px;
+    position:fixed;
+    top:0;
+    left:1200px;
 }
 .recent-post{
     display:flex;
@@ -313,12 +313,12 @@ a.fashion:before{
     font-size:65px;
 }
 
-/********* GALLERY **************/
+/********* GALLERY ***********/
 .zoombox{
-    background-color: #efefef;
+    background-color:#efefef;
     position:fixed;
     z-index:100;
-    left:calc(50% - 400px);
+    left: calc(50% - 400px);
     display:none;
     border:10px solid #fff;
     outline:1px solid #ddd;
@@ -333,8 +333,8 @@ a.fashion:before{
     right:20px;
     font-size:40px;
     z-index:101;
-    cursor: pointer;
-    text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+    cursor:pointer;
+    text-shadow: 0 0 2px rgba(255,255,255,0.8);
 }
 .post-card-footer{
     padding-top:40px;
@@ -351,55 +351,52 @@ a.fashion:before{
     transition: all 300ms;
 }
 .paging{
-    padding: 30px 0;
+    padding:30px 0;
 }
-.paging a {
+.paging a{
     display:inline-block;
     width:50px;
     height:50px;
     background:#ededed;
-    border-radius: 50%;
-    text-align: center;
+    border-radius:50%;
+    text-align:center;
     font-size:18px;
     color:#999;
-    line-height: 50px;
+    line-height:50px;
 }
 .paging a:first-child{
     margin-right:10px;
-
 }
 
-/********* youtube ************/
-.youtube-popup{
-    width:900px;
+/********* youtube *********/
+.youtube-popup {
+    width: 900px;
     height:507px;
     position:fixed;
-    top:100px;
+    top: 100px;
     left: 50%;
     transform: translateX(-50%);
     background:rgba(0,0,0,0.2);
     box-shadow: 0 0 40px 0 rgba(0,0,0,0.3);
     display:none;
-    z-index:100;
 }
+/********** contact *********/
 
-/********* contact ************/
-
-
-/********* signup ************/
+/*********** signup ********/
 .signuppopup{
     width:600px;
-    height:auto;
+    height: auto;
     padding:40px;
     background:#fff;
     box-shadow: 0 0 30px 0 rgba(0,0,0,0.3);
     position:fixed;
     top:80px;
     left:50%;
-    transform:translateX(-50%);
-    border-radius: 10px;
+    transform: translateX(-50%);
+    border-radius:10px;
     display:none;
 }
+
 .find-id{
     display:none;
 }
