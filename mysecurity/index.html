@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="res/css/style.css">
+    <link rel="icon" href="res/images/favicon_io/favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <script src="res/js/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&family=Sunflower:wght@300;500;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="#"><img src="res/images/blog-49006_1280.webp" alt="logo"></a>
+        </div>
+        <div class="signin text-center">
+            <h3 class="mb-3">LOGIN</h3>
+            <!-- 로그인 -->
+            <form action="">
+                <div class="mb-3">
+                    <input type="text" name="username" class="form-control" placeholder="username">
+                </div>
+                <div class="mb-3">
+                    <input type="password" name="password" class="form-control" placeholder="password">
+                </div>
+                <div class="d-grid ">
+                    <button type="submit" class="btn btn-success">LOGIN</button>
+                </div>
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            </form>
+            <!-- /로그인 -->
+        </div>
+        <nav>
+            <ul class="main-nav mt-5">
+                <li><a href="about.html">about me</a></li>
+                <li><a href="galley.html">my gallery</a></li>
+                <li><a href="#">my vod</a></li>
+                <li><a href="#">youtube link</a></li>
+                <li><a href="#">contact me</a></li>
+            </ul>
+        </nav>
+        <div class="social">
+            <a href="#" class="instagram"><i class="ri-instagram-line"></i></a>
+            <a href="#" class="youtube"><i class="ri-youtube-line"></i></a>
+            <a href="#" class="facebook"><i class="ri-facebook-circle-line"></i></a>
+            <a href="#" class="kakaotalk"><i class="ri-kakao-talk-line"></i></a>
+        </div>
+        <div class="copyright">
+            Copyright &copy; jack's all right reserved.
+        </div>
+    </header>
+    <div class="wrapper">
+        <div class="main">
+           중앙
+        </div>
+        <aside>
+         <h4 class="fw-bold">Latest posts</h4>
+         <div class="recent-post">
+            <div class="recent-post-box"><i class="ri-links-line"></i></div>
+            <a href="#" class="thumb">
+                <img src="res/images/trable1.jpeg" alt="01">
+            </a>
+            <a href="#" class="post-text trable">
+                <h6 class="fw-bold">이번 여행에서 건진 사진</h6>
+            </a>
+         </div>
+         <div class="recent-post">
+            <div class="recent-post-box"><i class="ri-links-line"></i></div>
+            <a href="#" class="thumb">
+                <img src="res/images/trable.jpg" alt="01">
+            </a>
+            <a href="#" class="post-text sport">
+                <h6 class="fw-bold">이번 여행에서 건진 사진</h6>
+            </a>
+         </div>
+         <div class="recent-post">
+            <div class="recent-post-box"><i class="ri-links-line"></i></div>
+            <a href="#" class="thumb">
+                <img src="res/images/trable3.jpg" alt="01">
+            </a>
+            <a href="#" class="post-text fassion">
+                <h6 class="fw-bold">이번 여행에서 건진 사진</h6>
+            </a>
+         </div>
+         <div class="recent-post">
+            <div class="recent-post-box"><i class="ri-links-line"></i></div>
+            <a href="#" class="thumb">
+                <img src="res/images/trable1.jpeg" alt="01">
+            </a>
+            <a href="#" class="post-text photography">
+                <h6 class="fw-bold">이번 여행에서 건진 사진</h6>
+            </a>
+         </div>
+         <div class="searchbox">
+            <form action="" class="search">
+                <input type="search" placeholder="search">
+                <button type="submit"><i class="ri-search-line"></i></button>
+            </form>
+         </div>
+         <div class="posttag">
+            <h4 class="fw-bold">Popular tag</h4>
+            <div class="d-flex flex-wrap">
+                <a href="#">bike</a>
+                <a href="#">제주도</a>
+                <a href="#">야구</a>
+                <a href="#">국가대표</a>
+                <a href="#">뛰어다니기</a>
+                <a href="#">jumping</a>
+                <a href="#">lake</a>
+                <a href="#">motivation</a>
+                <a href="#">notebook</a>
+            </div>
+         </div>
+        </aside>
+    </div>
+</body>
+</html>
